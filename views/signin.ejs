@@ -1,0 +1,55 @@
+<%- include("./partials/header.ejs") %>
+<section class="main">
+    <div class="container">
+           <img class="man-checking-list" src="./images/man-checking-list.png" alt="man checking list image" />
+           <div class="form">
+            <%if(locals.path === "/register"){%>
+                <form action="/addUser" method="post">
+                    <table cellspacing="10">
+                        <tr>
+                            <td><label for="name">Enter Your Name:</label></td>
+                            <td><input type="text" name="name" autocomplete="off" required /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="email">Enter Your Email:</label></td>
+                            <td><input type="email" name="email" autocomplete="off" required /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="password">Enter Password:</label></td>
+                            <td><input class="pass" type="password" name="password" autocomplete="off" required /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="cpassword">Confirm Password:</label></td>
+                            <td><input class="cpass" type="text" name="cpassword" autocomplete="off" required /></td>
+                        </tr>
+                        <tr>
+                            <td class="last" colspan="2"><button class="button" type="submit">Submit</button></td>
+                        </tr>
+                    </table>
+                </form>
+            <%}else if(locals.path === "/login"){%>
+                <form action="/loginUser" method="post">
+                    <table cellspacing="10">
+                        <tr>
+                            <td><label for="email">Enter Your Email:</label></td>
+                            <td><input type="email" name="email" autocomplete="off" required /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="password">Enter Password:</label></td>
+                            <td><input class="pass" type="password" name="password" autocomplete="off" required /></td>
+                        </tr>
+                        <tr>
+                            <td class="last" colspan="2"><button class="button" type="submit">Submit</button></td>
+                        </tr>
+                    </table>
+                </form>
+            <%}%>
+             <%if(locals.error){%>
+                <p class="error"><%= error%></p>
+             <%}%>
+           </div><!--form-->
+    </div><!--container-->
+</section><!--main-->
+<div>
+</div>
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width initial-scale=1"/>
+        <title>To Do List App</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Indie+Flower&family=Kalam:wght@300;400;700&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/styles/styles.css"/>
+        <link rel="stylesheet" href="/styles/responsive.css"/>
+    </head>
+    <body class="userhome-main">
+        <section class="header userhome-heading">
+                    <h1><span class="to">To</span> <span class="do">Do</span> <span class="list">List</span></h1>
+                    <ul class="links">
+                        <li class="last-link"><a class="anime userhome-link" href="/login">logout</a></li>
+                    </ul><!--ul-->
+        </section>
+        <section class="main">
+            <div class="container">
+                <form action="/newTask" method="post" class="task-input">
+                    <span>
+                        <input  class="title" type="text" name="title" placeholder="Enter Titile" autocomplete="off" required/>
+                        <textarea class="task" type="text" name="task" placeholder="enter task" rows="4" cols="30" autocomplete="off" required></textarea>
+                    </span>
+                    <span>    
+                        <input class="tdate" type="text" name="duedate" placeholder="enter due date" onfocus="(this.type='date')" autocomplete="off" required/>
+                        <%if(locals.userId){%>
+                            <input type="text" value="<%=userId%>" name="userid" hidden />
+                        <%}%>
+                        <button class="button task-button" type="submit">Add Task</button>  
+                    </span>
+                </form>  
+           </div><!--container-->
+          <%if(locals.usersTask){%> 
+           <div class="task-container">
+             <%usersTask.map((task)=>{%>
+                <div class="task-details">
+                     <h2 class="task-title"><%= task.title%></h2>
+                     <h3><%= task.task%></h3>
+                     <div class="date-status">
+                         <p><code>due date</code> - <%= task.duedate%></p>
+                         <!-- <p><code>status</code></p> -->
+                     </div> <!--date-status-->
+                     <div class=" update-delete-button">
+                        <a href="/update/<%= task.id%>?sno=<%= userId %>"><button class="button">update</button></a>
+                        <a href="/delete/<%= task.id%>"><button class="button">delete</button></a>
+                     </div> <!--update-delete-button-->
+                </div> <!--task-details-->
+                <%})%>
+           </div><!--task-container-->
+         <%}%> 
+        </section><!--main-->
+    </body><!--userhome-main-->
+</html>

@@ -1,0 +1,110 @@
+@media (max-width: 890px) and (min-width: 380px) {
+  html,body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .header {
+    height: 130px;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  h1 {
+    font-size: 25px;
+  }
+  h2 {
+    font-size: 40px;
+  }
+
+  .do {
+    font-size: 30px;
+  }
+
+  .anime {
+    font-size: 25px;
+  }
+  .container {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .task-input > span{
+    flex-direction: column;
+  }
+  .task-container{
+    justify-content: center;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 450px) {
+  html,body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .header {
+    height: 130px;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  h1 {
+    font-size: 23px;
+  }
+  h2 {
+    font-size: 35px;
+  }
+
+  .do {
+    font-size: 28px;
+  }
+
+  li {
+    list-style: none;
+    margin-right: 4rem;
+  }
+
+  .anime {
+    font-size: 20px;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .man-checking-list {
+    width: 280px;
+    height: auto;
+  }
+
+  /* SIGN */
+  table {
+    width: 270px;
+  }
+  table tr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .button {
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    font-size: 20px;
+  }
+  .task-input{
+    width: 320px;
+    max-width: fit-content;
+    height: 300px;
+    border: 1px solid gray;
+  }
+
+  .task-input > span{
+    flex-direction: column;
+  }
+  .task-container{
+    justify-content: center;
+    margin-left: 0;
+  }
+}

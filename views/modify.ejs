@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Update Task</title>
+        <link rel="stylesheet" href="/styles/styles.css"/>
+        <link rel="stylesheet" href="/styles/responsive.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Indie+Flower&family=Kalam:wght@300;400;700&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+    <%if(locals.result){%>
+     <section class="header">
+        <h1><span class="to">To</span> <span class="do">Do</span> <span class="list">List</span></h1>
+        <ul class="links">
+            <li ><a class="anime userhome-link" href="/">home</a></li>
+            <li ><a class="anime userhome-link" href="/userhome/<%= result.user_id %>">back</a></li>
+            <li class="last-link"><a class="anime userhome-link" href="/login">logout</a></li>
+        </ul><!--ul-->
+     </section>
+     <section class="main">
+             <div class="update-task-container">
+                <form action="/updatedTask/<%= result.id %>?sno=<%= result.user_id %>" method="post" class="task-input">
+                    <span>
+                        <input  class="title" type="text" name="title" value="<%= result.title %>" autocomplete="off" required/>
+                        <textarea class="task" type="text" name="task" rows="4" cols="30" autocomplete="off" required><%= result.task %></textarea>
+                    </span>
+                    <span>    
+                        <input class="tdate" type="text" name="duedate" value="<%= result.duedate %>" onfocus="(this.type='date')" autocomplete="off" required/>
+                        <button class="button task-button" type="submit">Update Task</button>  
+                    </span>
+                </form>  
+             </div>
+         <%}else{%>
+            <div>
+                <h2>Server Error</h2>
+            </div>
+         <%}%>
+     </section>
+    </body>
+</html>
