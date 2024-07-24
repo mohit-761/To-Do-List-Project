@@ -28,4 +28,4 @@ A web-based to-do list application built with Express.js, PostgreSQL, EJS, and C
 6. In another terminal -> nodemon server.js
 
 ## Project Images
-![login page](login-page.png)
+![login page](./project-images/login-page.png)
