@@ -26,3 +26,6 @@ A web-based to-do list application built with Express.js, PostgreSQL, EJS, and C
 4. Open 2 terminals
 5. In first terminal -> nodemon index.js
 6. In another terminal -> nodemon server.js
+
+## Project Images
+![login page](login-page.png)
